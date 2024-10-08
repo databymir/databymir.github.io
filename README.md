@@ -3,6 +3,8 @@
 Welcome to my personal portfolio website! This site showcases my projects, skills, and journey in the world of data science & analytics, 
 providing a more accessible way to view my work beyond the traditional GitHub repository format.
 
+[View my portfolio website](https://databymir.github.io)
+
 ## About This Project
 
 This website was built using the [vCard - Personal Portfolio](https://github.com/codewithsadee/vcard-personal-portfolio) template by Sadee. 

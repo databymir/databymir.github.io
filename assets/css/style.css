@@ -1105,6 +1105,11 @@ Additions from ChatGPT for my desired overlay
   .project-link {
     font-size: 12px; /* Smaller font size for links on mobile */
   }
+
+  /* Increase font size for navigation buttons on mobile */
+  .nav-button { /* Adjust this class name to match your button's class */
+    font-size: 16px; /* Adjust this size as needed */
+  }
 }
 
 /*-----------------------------------*\

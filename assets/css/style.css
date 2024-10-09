@@ -1356,10 +1356,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 /**
- * responsive larger than 580px screen
+ * responsive larger than 601px screen
  */
 
-@media (min-width: 580px) {
+@media (min-width: 601px) {
 
   /**
    * CUSTOM PROPERTY

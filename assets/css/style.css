@@ -1103,7 +1103,7 @@ Additions from ChatGPT for my desired overlay
   }
 
   /* Increase font size for navigation buttons on mobile */
-  .nav-item { 
+  .navbar-link { 
     font-size: 24px; /* Adjust this size as needed */
   }
 

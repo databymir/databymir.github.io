@@ -1,9 +1,84 @@
 'use strict';
 
+// Smooth scrolling and URL update for navigation links
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('[data-nav-link]');
+  const select = document.querySelector("[data-select]");
+  const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
+  // Smooth scroll and URL update for nav links
+  links.forEach(link => {
+      link.addEventListener('click', (e) => {
+          e.preventDefault(); // Prevent default behavior
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+          const targetId = link.getAttribute('href'); // Get the target section ID
+
+          // Call toggleActiveSection to show the target section
+          toggleActiveSection(targetId);
+
+          // Update the URL without reloading the page
+          window.history.pushState(null, '', targetId);
+      });
+  });
+
+  // Check if the page is loaded with a hash in the URL (like #portfolio) and activate the correct section
+  const initialHash = window.location.hash;
+  if (initialHash) {
+      toggleActiveSection(initialHash);
+  }
+
+  // Dropdown functionality for filtering
+  if (select) {
+      select.addEventListener("click", function () {
+          elementToggleFunc(this); // Function to toggle the dropdown
+      });
+  }
+
+  // Add event listeners to filter buttons
+  filterBtn.forEach(btn => {
+      btn.addEventListener('click', () => {
+          const category = btn.dataset.category;
+          filterProjects(category); // Call function to filter projects
+      });
+  });
+});
+
+// Function to toggle visibility of sections based on the URL hash
+function toggleActiveSection(sectionId) {
+  // Remove 'active' class from all sections
+  document.querySelectorAll('article').forEach(section => {
+      section.classList.remove('active');
+  });
+
+  // Add 'active' class to the target section
+  const targetSection = document.querySelector(sectionId);
+  if (targetSection) {
+      targetSection.classList.add('active');
+  }
+
+  // Update active link in the navbar
+  document.querySelectorAll('.navbar-link').forEach(link => {
+      link.classList.remove('active');
+  });
+
+  const activeLink = document.querySelector(`a[href="${sectionId}"]`);
+  if (activeLink) {
+      activeLink.classList.add('active');
+  }
+}
+
+// Function to filter projects based on the selected category
+function filterProjects(category) {
+    const allProjects = document.querySelectorAll('.project-item'); // Get all project items
+    allProjects.forEach(project => {
+        if (category === 'all' || project.dataset.category === category) {
+            project.style.display = 'block'; // Show project
+        } else {
+            project.style.display = 'none'; // Hide project
+        }
+    });
+}
+
 
 
 
@@ -12,9 +87,9 @@ const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
+sidebarBtn.addEventListener("click", function () {
+  sidebar.classList.toggle("active"); // Update this to directly toggle the sidebar's class
+});
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -49,10 +124,6 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 
 }
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
 
 
 // custom select variables
@@ -60,18 +131,32 @@ const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
+const projectItems = document.querySelectorAll("[data-filter-item]"); // Select all project items
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+// Add event listener for opening the dropdown
+select.addEventListener("click", function () {
+  this.classList.toggle("active"); // Directly toggle the dropdown's class
+});
+
+// Add event listeners for each select item to filter projects
+selectItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const selectedCategory = item.dataset.category;
+        selectValue.textContent = item.textContent; // Update the displayed value
+       
+        // Trigger the filter function
+        filterProjects(selectedCategory);
+    });
+});
+
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
+      let selectedValue = this.innerText.toLowerCase();
+      selectValue.innerText = this.innerText;
+      select.classList.toggle("active"); // Directly toggle the dropdown's class
+      filterFunc(selectedValue); // Make sure this function is defined somewhere
   });
 }
 

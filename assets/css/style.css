@@ -885,7 +885,15 @@ main {
   #PORTFOLIO
 \*-----------------------------------*/
 
-.filter-list { display: none; }
+.filter-list {
+  display: flex; /* Use flexbox for horizontal layout */
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center; /* Vertically center the buttons */
+  gap: 25px; /* Space between filter buttons */
+  margin-bottom: 20px; /* Space between filter buttons and projects */
+  padding: 0; /* Remove default padding */
+  list-style: none; /* Remove default list styling */
+}
 
 .filter-select-box {
   position: relative;
@@ -942,14 +950,6 @@ main {
 
 .select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
 
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates flexible columns */
-  gap: 30px;
-  margin-bottom: 10px;
-}
-
-.project-item { display: none; }
 
 .project-item.active {
   display: block;
@@ -1063,9 +1063,13 @@ Additions from ChatGPT for my desired overlay
 }
 
 .project-item {
-  position: relative; /* For absolute positioning of overlay */
-  cursor: pointer; /* Change cursor on hover */
+  position: relative; /* Keep this for overlay positioning */
+  cursor: pointer; /* Keep this to change cursor on hover */
+  flex: 0 1 calc(33.33% - 20px); /* Add this to size each item to 1/3 of the container width minus some spacing */
+  margin: 10px; /* Add margin for spacing between items */
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
 }
+
 
 .project-item:hover .project-overlay {
   opacity: 1; /* Show overlay on hover */
@@ -1676,15 +1680,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-select-box { display: none; }
 
-  .filter-list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 25px;
-    padding-left: 5px;
-    margin-bottom: 30px;
-  }
-
   .filter-item button {
     color: var(--light-gray);
     font-size: var(--fs-5);
@@ -1695,9 +1690,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-item button.active { color: var(--orange-yellow-crayola); }
 
-  /* portfolio and blog grid */
-
-  .project-list, .blog-posts-list { grid-template-columns: 1fr 1fr; }
 
 
 
@@ -1817,7 +1809,28 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .project-list { grid-template-columns: repeat(3, 1fr); }
+   .portfolio {
+    width: 100%; /* Keep it wide but not full width */
+    margin: 0 auto; /* Center it horizontally */
+    max-width: 100%; /* Prevents any max width restrictions */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+
+    .projects {
+     width: 100%; /* Ensure the projects section takes full width */
+    display: flex; /* Change from grid to flex */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+    .project-list {
+    display: flex; /* Ensure the list is a flex container */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: left; /* Left-justify items in the row */
+    margin-bottom: 10px; /* Space below the project list */
+  }
 
 
 

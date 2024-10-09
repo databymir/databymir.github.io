@@ -145,44 +145,34 @@
       -->
 
       <nav class="navbar">
-
         <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <!-- HIDE RESUME BUTTON
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          -->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <!-- HIDE BLOG BUTTON
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
-
-          -->
-
-          <!-- HIDE CONTACT BUTTON
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-          -->
-
+            <li class="navbar-item">
+                <a href="#about" class="navbar-link active" data-nav-link>About</a>
+            </li>
+    
+            <!-- HIDE RESUME BUTTON
+            <li class="navbar-item">
+                <a href="#resume" class="navbar-link" data-nav-link>Resume</a>
+            </li>
+            -->
+    
+            <li class="navbar-item">
+                <a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+            </li>
+    
+            <!-- HIDE BLOG BUTTON
+            <li class="navbar-item">
+                <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+            </li>
+            -->
+    
+            <!-- HIDE CONTACT BUTTON
+            <li class="navbar-item">
+                <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+            </li>
+            -->
         </ul>
-
-      </nav>
+    </nav>
 
 
 
@@ -192,7 +182,7 @@
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+      <article class="about active" data-page="about" id="about">
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -244,46 +234,6 @@
           
         </section>
 
-        <!--
-          - testimonials modal - removing bits of the below is ruining the overall site, leaving for now
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  <!-- Testimonial text goes here-->>
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
       </article>
 
 
@@ -294,135 +244,119 @@
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
-
+      <article class="portfolio" data-page="portfolio" id="portfolio">
+        
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+            <h2 class="h2 article-title">Portfolio</h2>
         </header>
-
+    
         <section class="projects">
-
-          <!-- Filter Buttons -->
-<ul class="filter-list">
-  <li class="filter-item">
-    <button class="active" data-filter-btn>All</button>
-  </li>
-  <li class="filter-item">
-    <button data-filter-btn data-category="business intelligence">Business Intelligence</button>
-  </li>
-  <li class="filter-item">
-    <button data-filter-btn data-category="fraud detection">Fraud Detection</button>
-  </li>
-  <li class="filter-item">
-    <button data-filter-btn data-category="social impact & policy">Social Impact & Policy</button>
-  </li>
-  <li class="filter-item">
-    <button data-filter-btn data-category="variety">Variety</button>
-  </li>
-</ul>
-
-<!-- Filter Dropdown (for mobile) -->
-<div class="filter-select-box">
-  <button class="filter-select" data-select>
-    <div class="select-value" data-select-value>Select category</div>
-    <div class="select-icon">
-      <ion-icon name="chevron-down"></ion-icon>
-    </div>
-  </button>
-
-  <ul class="select-list">
-    <li class="select-item">
-      <button data-select-item data-category="all">All</button>
-    </li>
-    <li class="select-item">
-      <button data-select-item data-category="business intelligence">Business Intelligence</button>
-    </li>
-    <li class="select-item">
-      <button data-select-item data-category="fraud detection">Fraud Detection</button>
-    </li>
-    <li class="select-item">
-      <button data-select-item data-category="social impact & policy">Social Impact & Policy</button>
-    </li>
-    <li class="select-item">
-      <button data-select-item data-category="variety">Variety</button>
-    </li>
-  </ul>
-</div>
-
-          <ul class="project-list">
-
-            <li class="project-item active" data-filter-item data-category="fraud detection">
-              <figure class="project-img">
-                <img src="./assets/images/fraud_fraudsynth.png" alt="Fraud Detection Using Synthesized Data: A Cautionary Tale" loading="lazy">
-                <div class="project-overlay">
-                  <a href="https://nbviewer.org/github/databymir/fraud_fraudsynth/blob/main/fraudsynth.ipynb" target="_blank" class="project-link">Notebook</a>
-                  <a href="https://github.com/databymir/fraud_fraudsynth" target="_blank" class="project-link">GitHub Repo</a>
-                  <a href="https://www.linkedin.com/pulse/fraud-detection-using-synthesized-data-cautionary-oliverius-cpa-1ehcc/" target="_blank" class="project-link">LinkedIn Article</a>
-                </div>
-              </figure>
-              <h3 class="project-title">Fraud Detection Using Synthesized Data: A Cautionary Tale</h3>
-              <p class="project-category">Fraud Detection, Python, EDA, ML</p>
-            </li>
-            
-            <li class="project-item active" data-filter-item data-category="business intelligence">
-              <figure class="project-img">
-                <img src="./assets/images/photo_business.png" alt="Photography Business Analysis" loading="lazy">
-                <div class="project-overlay">
-                  <a href="https://nbviewer.org/github/databymir/photo_business/blob/main/photo_business_analysis_sql_insights.ipynb" target="_blank" class="project-link">Notebook</a>
-                  <a href="https://public.tableau.com/app/profile/miranda.oliverius/viz/PhotographyBusinessDashboardStory/Dashboard" target="_blank" class="project-link">Tableau Dashboard</a>
-                  <a href="https://public.tableau.com/app/profile/miranda.oliverius/viz/PhotographyBusinessDashboardStory/Story" target="_blank" class="project-link">Tableau Story</a>
-                  <a href="https://github.com/databymir/photo_business" target="_blank" class="project-link">GitHub Repo</a>
-                </div>
-              </figure>
-              <h3 class="project-title">Photography Business Analysis</h3>
-              <p class="project-category">Business Intelligence, SQL, Tableau, Database, EDA</p>
-            </li>
-
-            <li class="project-item active" data-filter-item data-category="social impact & policy">
-              <figure class="project-img">
-                <img src="./assets/images/state_tax_burdens.png" alt="State Tax Burden Analysis" loading="lazy">
-                <div class="project-overlay">
-                  <a href="https://nbviewer.org/github/databymir/state_tax_burdens/blob/main/state_tax_burdens.ipynb" target="_blank" class="project-link">Notebook</a>
-                  <a href="https://github.com/databymir/state_tax_burdens" target="_blank" class="project-link">GitHub Repo</a>
-                </div>
-              </figure>
-              <h3 class="project-title">State Tax Burden Analysis</h3>
-              <p class="project-category">Social Impact & Policy, Python, EDA</p>
-            </li>
-            
-            <li class="project-item active" data-filter-item data-category="variety">
-              <figure class="project-img">
-                <img src="./assets/images/cookies.png" alt="Chocolate Chip Cookie Analysis" loading="lazy">
-                <div class="project-overlay">
-                  <a href="https://databymir.github.io/cookies/cookie_analysis.html" target="_blank" class="project-link">Notebook</a>
-                  <a href="https://github.com/databymir/cookies" target="_blank" class="project-link">GitHub Repo</a>
-                </div>
-              </figure>
-              <h3 class="project-title">Chocolate Chip Cookie Analysis</h3>
-              <p class="project-category">Variety, R, EDA</p>
-            </li>
-            
-
-            <!-- TEMPLATE FOR FUTURE PROJECTS
-
-            <li class="project-item active" data-filter-item data-category="your-category-here">
-              <figure class="project-img">
-                <img src="./assets/images/insert-image-path.jpg" alt="Project Title" loading="lazy">
-                <div class="project-overlay">
-                  <a href="https://link-to-your-notebook.html" target="_blank" class="project-link">Notebook</a>
-                  <a href="https://link-to-your-github-repo" target="_blank" class="project-link">GitHub Repo</a>
-                  <a href="https://www.linkedin.com/in/your-linkedin-article" target="_blank" class="project-link">LinkedIn Article</a>
-                </div>
-              </figure>
-              <h3 class="project-title">Your Project Title</h3>
-              <p class="project-category">Category 1, Category 2</p>
-            </li>
-          -->
-
-          </ul>
+            <!-- Filter Buttons -->
+            <ul class="filter-list">
+                <li class="filter-item">
+                    <button class="active" data-filter-btn data-category='all'>All</button>
+                </li>
+                <li class="filter-item">
+                    <button data-filter-btn data-category="business intelligence">Business Intelligence</button>
+                </li>
+                <li class="filter-item">
+                    <button data-filter-btn data-category="fraud detection">Fraud Detection</button>
+                </li>
+                <li class="filter-item">
+                    <button data-filter-btn data-category="social impact & policy">Social Impact & Policy</button>
+                </li>
+                <li class="filter-item">
+                    <button data-filter-btn data-category="variety">Variety</button>
+                </li>
+            </ul>
+    
+            <!-- Filter Dropdown (for mobile) -->
+            <div class="filter-select-box">
+                <button class="filter-select" data-select>
+                    <div class="select-value" data-select-value>Select category</div>
+                    <div class="select-icon">
+                        <ion-icon name="chevron-down"></ion-icon>
+                    </div>
+                </button>
+                <ul class="select-list">
+                    <li class="select-item"><button data-select-item data-category="all">All</button></li>
+                    <li class="select-item"><button data-select-item data-category="business intelligence">Business Intelligence</button></li>
+                    <li class="select-item"><button data-select-item data-category="fraud detection">Fraud Detection</button></li>
+                    <li class="select-item"><button data-select-item data-category="social impact & policy">Social Impact & Policy</button></li>
+                    <li class="select-item"><button data-select-item data-category="variety">Variety</button></li>
+                </ul>
+            </div>
+    
+            <ul class="project-list">
+                <li class="project-item active" data-filter-item data-category="fraud detection">
+                    <figure class="project-img">
+                        <img src="./assets/images/fraud_fraudsynth.png" alt="Fraud Detection Using Synthesized Data: A Cautionary Tale" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://nbviewer.org/github/databymir/fraud_fraudsynth/blob/main/fraudsynth.ipynb" target="_blank" class="project-link">Notebook</a>
+                            <a href="https://github.com/databymir/fraud_fraudsynth" target="_blank" class="project-link">GitHub Repo</a>
+                            <a href="https://www.linkedin.com/pulse/fraud-detection-using-synthesized-data-cautionary-oliverius-cpa-1ehcc/" target="_blank" class="project-link">LinkedIn Article</a>
+                        </div>
+                    </figure>
+                    <h3 class="project-title">Fraud Detection Using Synthesized Data: A Cautionary Tale</h3>
+                    <p class="project-category">Fraud Detection, Python, EDA, ML</p>
+                </li>
+    
+                <li class="project-item active" data-filter-item data-category="business intelligence">
+                    <figure class="project-img">
+                        <img src="./assets/images/photo_business.png" alt="Photography Business Analysis" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://nbviewer.org/github/databymir/photo_business/blob/main/photo_business_analysis_sql_insights.ipynb" target="_blank" class="project-link">Notebook</a>
+                            <a href="https://public.tableau.com/app/profile/miranda.oliverius/viz/PhotographyBusinessDashboardStory/Dashboard" target="_blank" class="project-link">Tableau Dashboard</a>
+                            <a href="https://public.tableau.com/app/profile/miranda.oliverius/viz/PhotographyBusinessDashboardStory/Story" target="_blank" class="project-link">Tableau Story</a>
+                            <a href="https://github.com/databymir/photo_business" target="_blank" class="project-link">GitHub Repo</a>
+                        </div>
+                    </figure>
+                    <h3 class="project-title">Photography Business Analysis</h3>
+                    <p class="project-category">Business Intelligence, SQL, Tableau, Database, EDA</p>
+                </li>
+    
+                <li class="project-item active" data-filter-item data-category="social impact & policy">
+                    <figure class="project-img">
+                        <img src="./assets/images/state_tax_burdens.png" alt="State Tax Burden Analysis" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://nbviewer.org/github/databymir/state_tax_burdens/blob/main/state_tax_burdens.ipynb" target="_blank" class="project-link">Notebook</a>
+                            <a href="https://github.com/databymir/state_tax_burdens" target="_blank" class="project-link">GitHub Repo</a>
+                        </div>
+                    </figure>
+                    <h3 class="project-title">State Tax Burden Analysis</h3>
+                    <p class="project-category">Social Impact & Policy, Python, EDA</p>
+                </li>
+    
+                <li class="project-item active" data-filter-item data-category="variety">
+                    <figure class="project-img">
+                        <img src="./assets/images/cookies.png" alt="Chocolate Chip Cookie Analysis" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://databymir.github.io/cookies/cookie_analysis.html" target="_blank" class="project-link">Notebook</a>
+                            <a href="https://github.com/databymir/cookies" target="_blank" class="project-link">GitHub Repo</a>
+                        </div>
+                    </figure>
+                    <h3 class="project-title">Chocolate Chip Cookie Analysis</h3>
+                    <p class="project-category">Variety, R, EDA</p>
+                </li>
+    
+                <!-- TEMPLATE FOR FUTURE PROJECTS
+                <li class="project-item active" data-filter-item data-category="your-category-here">
+                    <figure class="project-img">
+                        <img src="./assets/images/insert-image-path.jpg" alt="Project Title" loading="lazy">
+                        <div class="project-overlay">
+                            <a href="https://link-to-your-notebook.html" target="_blank" class="project-link">Notebook</a>
+                            <a href="https://link-to-your-github-repo" target="_blank" class="project-link">GitHub Repo</a>
+                            <a href="https://www.linkedin.com/in/your-linkedin-article" target="_blank" class="project-link">LinkedIn Article</a>
+                        </div>
+                    </figure>
+                    <h3 class="project-title">Your Project Title</h3>
+                    <p class="project-category">Category 1, Category 2</p>
+                </li>
+                -->
+            </ul>
 
         </section>
-
+      
       </article>
 
 
@@ -435,7 +369,7 @@
 
       <!-- TEMPORARILY NOT USING
 
-      <article class="resume" data-page="resume">
+      <article class="resume" data-page="resume" id="resume">
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
@@ -631,7 +565,7 @@
 
       <!-- TEMPORARILY NOT USING
 
-      <article class="blog" data-page="blog">
+      <article class="blog" data-page="blog" id="blog">
 
         <header>
           <h2 class="h2 article-title">Blog</h2>
@@ -827,7 +761,7 @@
 
       <!-- TEMPORARILY NOT USING
 
-      <article class="contact" data-page="contact">
+      <article class="contact" data-page="contact" id="contact">
 
         <header>
           <h2 class="h2 article-title">Contact</h2>
@@ -880,6 +814,7 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
 </body>
 

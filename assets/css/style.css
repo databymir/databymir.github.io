@@ -1126,10 +1126,8 @@ Additions from ChatGPT for my desired overlay
   .filter-select.active + .select-list {
     display: block; /* Show the dropdown when active */
   }
-
-
-
 }
+
 
 /*-----------------------------------*\
   #BLOG

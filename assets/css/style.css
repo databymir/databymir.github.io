@@ -1108,7 +1108,12 @@ Additions from ChatGPT for my desired overlay
 
   /* Increase font size for navigation buttons on mobile */
   .nav-button { /* Adjust this class name to match your button's class */
-    font-size: 16px; /* Adjust this size as needed */
+    font-size: 24px; /* Adjust this size as needed */
+  }
+
+  /* Change the color of filter buttons on mobile */
+  .filter-list button {
+    color: lightgray; /* Change this to your desired color */
   }
 }
 

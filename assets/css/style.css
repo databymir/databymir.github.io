@@ -1102,19 +1102,33 @@ Additions from ChatGPT for my desired overlay
     padding: 10px; /* Less padding on mobile */
   }
 
-  .project-link {
-    font-size: 12px; /* Smaller font size for links on mobile */
-  }
-
   /* Increase font size for navigation buttons on mobile */
-  .nav-button { /* Adjust this class name to match your button's class */
+  .nav-item { 
     font-size: 24px; /* Adjust this size as needed */
   }
 
-  /* Change the color of filter buttons on mobile */
-  .filter-list button {
-    color: lightgray; /* Change this to your desired color */
+  .filter-list {
+    display: none; /* Hide the original filter list */
   }
+
+  .filter-select-box {
+    display: block; /* Show the dropdown */
+  }
+
+  .select-list {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position it absolutely */
+    background-color: white; /* Set background color */
+    z-index: 10; /* Make sure it appears above other elements */
+    /* Add additional styling as needed */
+  }
+
+  .filter-select.active + .select-list {
+    display: block; /* Show the dropdown when active */
+  }
+
+
+
 }
 
 /*-----------------------------------*\

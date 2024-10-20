@@ -458,16 +458,17 @@ main {
 \*-----------------------------------*/
 
 .navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: relative; /* Make it part of the normal document flow */
+  top: auto; /* Remove the fixed top position */
   width: 100%;
   background: hsla(240, 1%, 17%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
+  margin-top: 20px; /* Add some space below the sidebar */
+  margin-bottom: 20px; /* Add some space above the content */
   z-index: 5;
+  border-radius: 12px; /* Rounded corners */
 }
 
 .navbar-list {
@@ -1388,7 +1389,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar, article {
-    width: 520px;
+    width: 700px;
     margin-inline: auto;
     padding: 30px;
   }
@@ -1472,7 +1473,17 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #NAVBAR
    */
 
-  .navbar { border-radius: 20px 20px 0 0; }
+   .navbar {
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: max-content;
+    border-radius: 0 20px;
+    padding: 0 20px;
+    box-shadow: none;
+  }
 
   .navbar-list { gap: 20px; }
 
@@ -1611,6 +1622,43 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .blog-content { padding: 25px; }
 
+  .filter-select-box { display: none; }
+
+  .filter-item button {
+    color: var(--light-gray);
+    font-size: var(--fs-5);
+    transition: var(--transition-1);
+  }
+
+  .filter-item button:hover { color: var(--light-gray-70); }
+
+  .filter-item button.active { color: var(--orange-yellow-crayola); }
+
+  .portfolio {
+    width: 100%; /* Keep it wide */
+    margin: 0 auto; /* Center it horizontally */
+    max-width: 700px; /* Keep max-width consistent */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+  .projects {
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow project items to wrap into rows */
+    justify-content: left; /* Align project items to the left */
+    gap: 20px; /* Add space between project items */
+  }
+
+  .project-list {
+    display: flex; /* Keep flexbox for project list */
+    flex-wrap: wrap; /* Ensure project items wrap into rows */
+    justify-content: left; /* Align project items to the left */
+    margin-bottom: 10px; /* Space below the project list */
+  }
+
+  .project-item {
+    flex: 1 1 calc(50% - 20px); /* Set project items to 2 columns */
+    max-width: calc(50% - 20px); /* Ensure they fit within the 2-column layout */
+  }
 
 
   /**
@@ -1641,97 +1689,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 
-
-
-
-/**
- * responsive larger than 768px screen
- */
-
-@media (min-width: 768px) {
-
-  /**
-   * REUSED STYLE
-   */
-
-  .sidebar, article { width: 700px; }
-
-  .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
-
-
-
-  /**
-   * SIDEBAR
-   */
-
-  .contacts-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 15px;
-  }
-
-
-
-  /**
-   * NAVBAR
-   */
-
-  .navbar-link { --fs-8: 15px; }
-
-
-
-  /**
-   * ABOUT
-   */
-
-  /* testimonials modal */
-
-  .testimonials-modal {
-    gap: 35px;
-    max-width: 680px;
-  }
-
-  .modal-avatar-box img { width: 80px; }
-
-
-
-  /**
-   * PORTFOLIO
-   */
-
-  .article-title { padding-bottom: 20px; }
-
-  .filter-select-box { display: none; }
-
-  .filter-item button {
-    color: var(--light-gray);
-    font-size: var(--fs-5);
-    transition: var(--transition-1);
-  }
-
-  .filter-item button:hover { color: var(--light-gray-70); }
-
-  .filter-item button.active { color: var(--orange-yellow-crayola); }
-
-
-
-
-  /**
-   * CONTACT
-   */
-
-  .input-wrapper { grid-template-columns: 1fr 1fr; }
-
-  .form-btn {
-    width: max-content;
-    margin-left: auto;
-  }
-  
-}
-
-
-
-
-
 /**
  * responsive larger than 1024px screen
  */
@@ -1753,8 +1710,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
 
   }
-
-
 
   /**
    * REUSED STYLE
@@ -1794,6 +1749,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     border-radius: 0 20px;
     padding: 0 20px;
+    margin: 0; /* Remove margin */
     box-shadow: none;
   }
 
@@ -1834,7 +1790,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    .portfolio {
     width: 100%; /* Keep it wide but not full width */
     margin: 0 auto; /* Center it horizontally */
-    max-width: 100%; /* Prevents any max width restrictions */
+    max-width: 950px; /* Prevents any max width restrictions */
     padding: 20px; /* Add padding for spacing */
   }
 
@@ -1863,10 +1819,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .blog-banner-box { height: 230px; }
 
 }
-
-
-
-
 
 /**
  * responsive larger than 1250px screen
@@ -1987,5 +1939,32 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 */
 
   .timeline-text { max-width: 700px; }
+
+  /**
+   * PORTFOLIO
+   */
+
+   .portfolio {
+    width: 100%; /* Keep it wide but not full width */
+    margin: 0 auto; /* Center it horizontally */
+    max-width: 100%; /* Prevents any max width restrictions */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+
+    .projects {
+     width: 100%; /* Ensure the projects section takes full width */
+    display: flex; /* Change from grid to flex */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 20px; /* Add some padding for spacing */
+  }
+
+    .project-list {
+    display: flex; /* Ensure the list is a flex container */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: left; /* Left-justify items in the row */
+    margin-bottom: 10px; /* Space below the project list */
+  }
 
 }

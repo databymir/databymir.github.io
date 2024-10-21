@@ -450,9 +450,6 @@ main {
 .social-item .social-link:hover { color: var(--light-gray); }
 
 
-
-
-
 /*-----------------------------------*\
   #NAVBAR
 \*-----------------------------------*/
@@ -1790,7 +1787,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    .portfolio {
     width: 100%; /* Keep it wide but not full width */
     margin: 0 auto; /* Center it horizontally */
-    max-width: 950px; /* Prevents any max width restrictions */
+    max-width: 950px; /* Restrict max-width */
     padding: 20px; /* Add padding for spacing */
   }
 
@@ -1947,24 +1944,28 @@ textarea.form-input::-webkit-resizer { display: none; }
    .portfolio {
     width: 100%; /* Keep it wide but not full width */
     margin: 0 auto; /* Center it horizontally */
-    max-width: 100%; /* Prevents any max width restrictions */
+    max-width: 950px; /* Restrict max-width to fit better on wide screens */
     padding: 20px; /* Add padding for spacing */
   }
 
-
-    .projects {
-     width: 100%; /* Ensure the projects section takes full width */
-    display: flex; /* Change from grid to flex */
-    flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the left */
-    padding: 20px; /* Add some padding for spacing */
+  .projects {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+    justify-content: flex-start; /* Align items to the start */
+    padding: 20px; /* Add padding for spacing */
   }
 
-    .project-list {
-    display: flex; /* Ensure the list is a flex container */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    justify-content: left; /* Left-justify items in the row */
+  .project-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap into rows */
+    justify-content: flex-start; /* Align items to the start */
     margin-bottom: 10px; /* Space below the project list */
+  }
+
+  .project-item {
+    flex: 1 1 calc(33.33% - 20px); /* Create a flexible 3-column layout */
+    max-width: calc(33.33% - 20px); /* Ensure items take up 1/3 of the width */
+    margin-bottom: 20px; /* Add some space below each item */
   }
 
 }
